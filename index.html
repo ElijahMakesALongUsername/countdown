@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>countdown.</title>
+    <link href="https://minecraft-font-css.artisticmclaren.repl.co/style.css" rel="stylesheet" type="text/css" />
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/x-icon" href="Icon.jpeg">
+</head>
+
+<body>
+    <!-- Display the countdown timer in an element -->
+    <p style="text-align: center; font-family: 'Minecraftia'">this site gets taken down in:</p>
+    <p style="text-align: center; font-family: 'Minecraftia'"></p>
+    <p style="text-align: center; font-family: 'Minecraftia'">visit this site every so often as I will add new things to
+        it.</p>
+    <p style="text-align: center; font-family: 'Minecraftia';">squish squish</p>
+    <p style="color: white;">-</p>
+    <p style="text-align: center;"><a style="font-family: 'Minecraftia';" href="https://arcade.makecode.com/S16813-01567-18614-80074">makecode go brrrrr</a></p>
+
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Dec 15, 2023 10:17:00").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function () {
+
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the element with id="demo"
+            document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+                + minutes + "m " + seconds + "s ";
+
+            // If the count down is finished, write some text 
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "404: Page Not Found.";
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>
